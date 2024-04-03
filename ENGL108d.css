@@ -1,7 +1,14 @@
 #src1{
-    padding-bottom: 20px
 }
 #src2{}
+
+p {
+    border-style: solid;
+    padding-right: 5px;
+    padding-left: 5px;
+    width: fit-content;
+    border-radius: 5px;
+}
 
 .text{
 }
