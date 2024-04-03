@@ -3,22 +3,27 @@ const source2 = document.getElementById("src2");
 
 console.log('start');
 
-const human = ["Fake life through goggles<br>Endless possiblities<br>Unhealthy outcomes",
-, "Worlds of falsehoods and ideal situations<br>No thoughts of commitments and real obligations<br>Living in your own world<br>As addiction takes hold<br><br>No concept of time<br>No sense of mind<br>The allure is too strong<br>Leave reality behind"];
-const robot = ["Eyes lost in pixels<br>Disconnected from the world<br>Human touch fades fast",
-"In pixelated worlds we're trapped,<br>Human bonds by screens are snapped.<br>Eyes strained in the artificial glow,<br>As real connections cease to flow<br><br>In digital confines, we reside,<br>Humanity's essence begins to slide"];
 let correct = -1;
 
 const next = document.getElementById("next-button");
 
 let counter = 0;
 
-change();
+let texts;
+
+fetch("texts.txt")
+  .then((res) => res.text())
+  .then((text) => {
+    texts = text.split('\n\n\n');
+    console.log("test2");
+   })
+  .then((x) => change())
+  .catch((e) => console.error(e));
 
 next.addEventListener("click", 
 function(){
     counter++;
-    if(counter >= human.length) {
+    if(counter*2 >= texts.length) {
         counter = 0;
     }
     change();
@@ -29,12 +34,12 @@ function change(){
     console.log(source1);
     let random = Math.floor(Math.random()*2);
     if(random == 0) {
-        source1.innerHTML = human[counter];
-        source2.innerHTML = robot[counter];
+        source1.innerHTML = texts[2*counter];
+        source2.innerHTML = texts[2*counter+1];
         correct = 1;
     } else {
-        source2.innerHTML = human[counter];
-        source1.innerHTML = robot[counter];
+        source2.innerHTML = texts[2*counter];
+        source1.innerHTML = texts[2*counter+1];
         correct = 2;
     }
     source1.style.color="black";
