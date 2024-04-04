@@ -17,6 +17,7 @@ p {
 
 button {
     background-color: #1103f6;
+    border: none;
     color: white;
     text-align: center;
     font-size: 16px;
