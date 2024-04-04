@@ -9,7 +9,30 @@ p {
     width: fit-content;
     border-radius: 5px;
     max-width: 1000px;
+    font-size: 16px;
 }
 
 .text{
+}
+
+button {
+    background-color: #2133f6;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+a {
+    background-color: #b1c3f6;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
